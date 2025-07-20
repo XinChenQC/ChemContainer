@@ -1,0 +1,19 @@
+FROM python:3.12-slim-bookworm
+
+WORKDIR /root/metaUMA
+
+RUN pip install uv
+
+COPY pyproject.toml uv.lock /root/metaUMA/
+
+RUN uv sync
+
+COPY uma.pt main.py /root/metaUMA/
+
+ENV PATH="/root/metaUMA/.venv/bin:$PATH"
+
+EXPOSE 8000
+
+#ENTRYPOINT ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8188"]
+ENTRYPOINT ["uv", "run", "uvicorn", "main:app", "--host", "::", "--port", "8000"]
+

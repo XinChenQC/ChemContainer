@@ -1,0 +1,21 @@
+FROM python:3.12-slim-bookworm
+
+WORKDIR /root/ANI2Net
+
+RUN apt-get update && \
+    apt-get install -y git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    pip install uv
+
+COPY pyproject.toml uv.lock /root/ANI2Net/
+
+RUN uv sync
+
+COPY main.py anirun.py /root/ANI2Net/
+
+ENV PATH="/root/ANI2Net/.venv/bin:$PATH"
+
+EXPOSE 8000
+
+ENTRYPOINT ["uv", "run", "uvicorn", "main:app", "--host", "::", "--port", "8000"]
