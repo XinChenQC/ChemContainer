@@ -15,12 +15,17 @@ To standardize the computational chemistry calculation input or output in contai
 ## Folder
 
 ### DockerFiles
+
     * Different Cloud Provider (Salad, Nebius, AWS)
     * GPU/CPU
 
 ### Fastapi_general 
 
 ### App
+
    * Interact with FastAPI.
    * Different functions
+   * Single funcion
+     1. MSA (multi sequence alignment)
+     2. Diffdock (Molecular docking)
 
