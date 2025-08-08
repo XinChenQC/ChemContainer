@@ -1,0 +1,24 @@
+# Example YAML configuration for xTB calculation
+method: "gfn2"  # or "gxtb", "xtb-g", "g-xtb"
+charge: 0
+multiplicity: 1
+
+# Molecule coordinates in XYZ format
+coordinates: |
+  6
+  Water dimer
+  O     0.000000     0.000000     0.118720
+  H     0.000000     0.755370    -0.474880
+  H     0.000000    -0.755370    -0.474880
+  O     3.000000     0.000000     0.118720
+  H     3.000000     0.755370    -0.474880
+  H     3.000000    -0.755370    -0.474880
+
+# Additional options for the calculation
+options:
+  opt: true        # Geometry optimization
+  freq: true       # Frequency calculation
+  solvent: "water" # Implicit solvation
+  # temperature: 298.15  # Temperature in K
+  # pressure: 1.0        # Pressure in atm
+
