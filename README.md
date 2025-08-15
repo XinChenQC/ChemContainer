@@ -14,7 +14,12 @@ Drug Discovery Agent:
     
 ## Containers
 
-1. AIgen Molecules (NVIDIA genmol)
-2. Docking Container (VINA and GNINA)
-3. Interacion (PLIP)
+0. Base tools (RDkit and xTB, openbabel) -- Me
+1. AIgen Molecules (NVIDIA genmol)      -- Me
+2. Docking Container (VINA and GNINA)   -- Half be my
+3. Interacion (PLIP)   -- 
 4. ADMET (ADMET-AI)
+
+## Simplify Nvidia CUDA-toolchain
+
+nvprune: https://docs.nvidia.com/cuda/cuda-binary-utilities/index.html
